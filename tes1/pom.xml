@@ -13,36 +13,49 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.release>17</maven.compiler.release>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
 
-  <dependencyManagement>
+ 
     <dependencies>
-      <dependency>
-        <groupId>org.junit</groupId>
-        <artifactId>junit-bom</artifactId>
-        <version>5.11.0</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
+      <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
+    <dependency>
+     <groupId>io.cucumber</groupId>
+     <artifactId>cucumber-java</artifactId>
+     <version>7.18.1</version>
+     </dependency>
+    <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
+    <dependency>
+     <groupId>io.cucumber</groupId>
+     <artifactId>cucumber-testng</artifactId>
+     <version>7.18.1</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.testng</groupId>
+      <artifactId>testng</artifactId>
+      <version>6.9.8</version>
+      <scope>test</scope>
+    </dependency>
+
+  <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+	<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>4.23.1</version>
+	</dependency>  
+	
+	<dependency>
+    <groupId>org.junit.jupiter</groupId>
+    <artifactId>junit-jupiter-api</artifactId>
+    <version>5.0.0-M5</version>
+    <scope>test</scope>
+	</dependency>
     </dependencies>
-  </dependencyManagement>
+  
 
-  <dependencies>
-    <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter-api</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <!-- Optionally: parameterized tests support -->
-    <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter-params</artifactId>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
-
-  <build>
+    <build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
